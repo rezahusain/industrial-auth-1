@@ -7,34 +7,29 @@ class PhotoPolicy < ApplicationPolicy
   end
 
   def show?
-    owner_check ||
+    user == @photo.owner ||
     !photo.owner.private? ||
     photo.owner.followers.include?(user)
   end
 
   def edit?
-    owner_check
+    true
   end
 
   def destroy?
-    owner_check
+    true
   end
 
   def update? 
-    owner_check
+    true
   end
 
   def create?
-    owner_check
+    true
   end
 
   def new?
-    owner_check
+    true
   end
 
-  private
-
-  def owner_check
-    user == photo.owner
-  end
 end
