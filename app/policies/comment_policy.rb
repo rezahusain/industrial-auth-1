@@ -13,23 +13,20 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def edit?
-    user == comment.owner
+    user == comment.author
   end
+
 
   def destroy?
-    user == comment.owner
-  end
-
-  def update? 
-    user == comment.owner
+    user == comment.author
   end
 
   def create?
-    user == comment.owner
+    true
   end
 
-  def new?
-    user == comment.owner
+  def index?
+    true
   end
 
 end
