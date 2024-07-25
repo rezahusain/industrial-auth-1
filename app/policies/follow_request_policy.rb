@@ -19,17 +19,14 @@ class FollowRequestPolicy < ApplicationPolicy
   end
 
   def update?
-    #user == follow_request.sender
     true
   end
 
   def destroy?
-    #user == follow_request.sender
     true
   end
 
   def set_follow_request
     true
-    #user != follow_request.recipient
   end
 end
