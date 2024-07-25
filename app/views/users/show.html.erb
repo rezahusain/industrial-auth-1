@@ -9,7 +9,7 @@
       <%= render "users/profile_nav", user: @user %>
     </div>
   </div>
-<% if policy(@user).show? %>
+<% if policy(@user).content? %>
   <% @user.own_photos.each do |photo| %>
     <div class="row mb-4">
       <div class="col-md-6 offset-md-3">
